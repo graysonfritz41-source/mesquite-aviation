@@ -10,9 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --sky-blue: #0A7AFF;
-            --deep-blue: #001F3F;
-            --horizon-orange: #FF6B35;
+            --patriot-red: #DC143C;
+            --sky-blue: #0066CC;
+            --deep-blue: #003366;
+            --bright-red: #FF0000;
             --cloud-white: #F8FAFC;
             --slate: #334155;
             --steel: #64748B;
@@ -36,10 +37,10 @@
             position: fixed;
             top: 0;
             width: 100%;
-            background: rgba(0, 31, 63, 0.95);
+            background: rgba(0, 51, 102, 0.95);
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 2px solid var(--sky-blue);
+            border-bottom: 3px solid var(--patriot-red);
         }
 
         nav {
@@ -51,21 +52,33 @@
             align-items: center;
         }
 
-        .logo {
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: white;
             letter-spacing: 2px;
         }
 
-        .logo span {
-            color: var(--horizon-orange);
+        .logo-text span {
+            color: var(--patriot-red);
         }
 
         nav ul {
             display: flex;
             gap: 2.5rem;
             list-style: none;
+            align-items: center;
         }
 
         nav a {
@@ -79,11 +92,11 @@
         }
 
         nav a:hover {
-            color: var(--horizon-orange);
+            color: var(--patriot-red);
         }
 
         .cta-button {
-            background: var(--horizon-orange);
+            background: var(--patriot-red);
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 4px;
@@ -92,14 +105,31 @@
         }
 
         .cta-button:hover {
-            background: #ff8757;
+            background: var(--bright-red);
             transform: translateY(-2px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.3rem;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--patriot-red);
+            transform: scale(1.1);
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(135deg, var(--deep-blue) 0%, #003d7a 100%);
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sky-blue) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -115,8 +145,8 @@
             right: 0;
             bottom: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(10, 122, 255, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(255, 107, 53, 0.1) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(220, 20, 60, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 102, 204, 0.15) 0%, transparent 50%);
             animation: float 20s ease-in-out infinite;
         }
 
@@ -155,7 +185,7 @@
         }
 
         .hero h1 span {
-            color: var(--horizon-orange);
+            color: var(--patriot-red);
             display: block;
             font-size: 6rem;
         }
@@ -171,6 +201,7 @@
             display: flex;
             gap: 1.5rem;
             justify-content: center;
+            flex-wrap: wrap;
             animation: fadeInUp 1s ease-out 0.6s both;
         }
 
@@ -187,14 +218,14 @@
         }
 
         .btn-primary {
-            background: var(--horizon-orange);
+            background: var(--patriot-red);
             color: white;
         }
 
         .btn-primary:hover {
-            background: #ff8757;
+            background: var(--bright-red);
             transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(255, 107, 53, 0.4);
+            box-shadow: 0 10px 30px rgba(220, 20, 60, 0.4);
         }
 
         .btn-secondary {
@@ -206,6 +237,17 @@
         .btn-secondary:hover {
             background: white;
             color: var(--deep-blue);
+        }
+
+        .btn-schedule {
+            background: var(--sky-blue);
+            color: white;
+        }
+
+        .btn-schedule:hover {
+            background: #0052a3;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
         }
 
         /* Services Section */
@@ -257,7 +299,7 @@
         .service-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
-            border-top-color: var(--horizon-orange);
+            border-top-color: var(--patriot-red);
         }
 
         .service-icon {
@@ -292,7 +334,33 @@
 
         .service-card a:hover {
             gap: 1rem;
-            color: var(--horizon-orange);
+            color: var(--patriot-red);
+        }
+
+        /* Schedule CTA Section */
+        .schedule-cta {
+            padding: 6rem 2rem;
+            background: var(--patriot-red);
+            color: white;
+            text-align: center;
+        }
+
+        .schedule-cta h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .schedule-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .schedule-cta .btn {
+            font-size: 1.1rem;
+            padding: 1.2rem 3rem;
         }
 
         /* Why Choose Section */
@@ -316,7 +384,7 @@
         .feature-number {
             font-family: 'Bebas Neue', sans-serif;
             font-size: 4rem;
-            color: var(--horizon-orange);
+            color: var(--patriot-red);
             line-height: 1;
             margin-bottom: 1rem;
         }
@@ -368,7 +436,7 @@
         }
 
         .owner-info .title {
-            color: var(--horizon-orange);
+            color: var(--patriot-red);
             font-weight: 600;
             margin-bottom: 1rem;
             display: block;
@@ -377,7 +445,7 @@
         /* Contact Section */
         .contact {
             padding: 8rem 2rem;
-            background: linear-gradient(135deg, var(--deep-blue) 0%, #003d7a 100%);
+            background: linear-gradient(135deg, var(--deep-blue) 0%, var(--sky-blue) 100%);
             color: white;
         }
 
@@ -405,23 +473,49 @@
         }
 
         .contact-info a {
-            color: var(--horizon-orange);
+            color: var(--bright-red);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.3rem;
             transition: color 0.3s;
         }
 
         .contact-info a:hover {
-            color: #ff8757;
+            color: white;
         }
 
         /* Footer */
         footer {
             background: var(--deep-blue);
             color: white;
-            text-align: center;
-            padding: 2rem;
-            border-top: 2px solid var(--sky-blue);
+            padding: 3rem 2rem;
+            border-top: 3px solid var(--patriot-red);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .footer-social a {
+            color: white;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .footer-social a:hover {
+            color: var(--patriot-red);
+            transform: scale(1.2);
         }
 
         footer p {
@@ -430,9 +524,18 @@
         }
 
         /* Responsive */
-        @media (max-width: 768px) {
+        @media (max-width: 968px) {
             nav ul {
                 display: none;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 1.5rem;
+                cursor: pointer;
             }
 
             .hero h1 {
@@ -458,6 +561,11 @@
             .services-grid {
                 grid-template-columns: 1fr;
             }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
         }
 
         /* Smooth Scroll */
@@ -476,17 +584,37 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* Logo placeholder styling */
+        .logo-placeholder {
+            width: 200px;
+            height: 60px;
+            background: white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--deep-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 <body>
     <!-- Header -->
     <header>
         <nav>
-            <div class="logo">MESQUITE <span>AVIATION</span></div>
+            <div class="logo-container">
+                <img src="logo.gif" alt="Mesquite Aviation Logo" class="logo-img">
+            </div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li class="social-links">
+                    <a href="https://www.facebook.com/people/Mesquite-Aviation/100063481752746/" target="_blank" title="Facebook">📘</a>
+                    <a href="https://www.linkedin.com/company/mesquite-aviation/" target="_blank" title="LinkedIn">💼</a>
+                </li>
                 <li><a href="tel:972-222-3546" class="cta-button">Call Now</a></li>
             </ul>
         </nav>
@@ -501,6 +629,7 @@
             </h1>
             <p>Premier flight training & aircraft rental at Mesquite Metro Airport</p>
             <div class="hero-buttons">
+                <!-- <a href="https://app.flightschedulepro.com/schedule/XXXXX" target="_blank" class="btn btn-schedule">📅 Schedule Online</a> -->
                 <a href="#services" class="btn btn-primary">Explore Services</a>
                 <a href="#contact" class="btn btn-secondary">Book Discovery Flight</a>
             </div>
@@ -546,6 +675,17 @@
         </div>
     </section>
 
+    <!-- Schedule CTA Section - UNCOMMENT WHEN FLIGHT SCHEDULE PRO IS READY -->
+    <!--
+    <section class="schedule-cta">
+        <div class="container">
+            <h2>READY TO FLY?</h2>
+            <p>Schedule your flight training or aircraft rental online with Flight Schedule Pro</p>
+            <a href="https://app.flightschedulepro.com/schedule/XXXXX" target="_blank" class="btn btn-secondary">📅 Schedule Now</a>
+        </div>
+    </section>
+    -->
+
     <!-- Why Choose Section -->
     <section class="why-choose">
         <div class="container">
@@ -566,8 +706,8 @@
                 </div>
                 <div class="feature fade-in">
                     <div class="feature-number">24/7</div>
-                    <h3>Flexible Schedule</h3>
-                    <p>Online scheduling and flexible training times</p>
+                    <h3>Online Scheduling</h3>
+                    <p>Book your flights anytime with Flight Schedule Pro</p>
                 </div>
                 <div class="feature fade-in">
                     <div class="feature-number">$$$</div>
@@ -628,7 +768,13 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Mesquite Aviation. All rights reserved. | Mesquite Metro Airport, Texas</p>
+        <div class="footer-content">
+            <p>&copy; 2024 Mesquite Aviation. All rights reserved. | Mesquite Metro Airport, Texas</p>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/people/Mesquite-Aviation/100063481752746/" target="_blank" title="Facebook">📘</a>
+                <a href="https://www.linkedin.com/company/mesquite-aviation/" target="_blank" title="LinkedIn">💼</a>
+            </div>
+        </div>
     </footer>
 
     <script>
